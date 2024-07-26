@@ -1,19 +1,25 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+import "./App.css";
 import "mdui/mdui.css";
 import "mdui";
 import "mdui/components/button.js";
-import type { Button } from 'mdui/components/button.js';
-import './App.css'
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   const [count, setCount] = useState(0)
 
+  function handleClick() {
+    setCount(count + 1)
+  }
+
   return (
-    <>
-      <mdui-button>Hello, world!</mdui-button>
-    </>
+    <div>
+      <Routes>
+        <Route path="/" element={<div>Home</div>} />
+        <Route path="/about" element={<div>About</div>} />
+      </Routes>
+    </div>
   );
 }
 
